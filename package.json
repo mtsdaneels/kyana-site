@@ -1,5 +1,5 @@
 {
-  "name": "starters-nest",
+  "name": "kyana-site",
   "description": "A minimal Remix starter with Cloudflare Workers - ready for your new project.",
   "private": true,
   "dependencies": {
