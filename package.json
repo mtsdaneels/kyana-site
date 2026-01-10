@@ -1,0 +1,45 @@
+{
+  "name": "starters-nest",
+  "description": "A minimal Remix starter with Cloudflare Workers - ready for your new project.",
+  "private": true,
+  "dependencies": {
+    "@remix-run/cloudflare": "2.16.5",
+    "@remix-run/react": "2.16.5",
+    "@remix-run/server-runtime": "2.16.5",
+    "isbot": "5.1.26",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.71",
+    "@cloudflare/workers-types": "^4.20250425.0",
+    "@remix-run/dev": "2.16.5",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "8.35.0",
+    "@typescript-eslint/parser": "8.35.0",
+    "baseline-browser-mapping": "^2.9.13",
+    "eslint": "9.27.0",
+    "typescript": "5.8.3",
+    "vite": "^5.4.20",
+    "vite-tsconfig-paths": "5.1.4",
+    "wrangler": "^3.114.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "remix vite:build",
+    "cf-typegen": "wrangler types",
+    "check": "tsc && remix vite:build && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "dev": "remix vite:dev",
+    "lint": "eslint --ignore-pattern .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "preview": "npm run build && wrangler dev",
+    "start": "wrangler dev",
+    "test": "echo \"no tests\"",
+    "typecheck": "tsc"
+  },
+  "sideEffects": false,
+  "type": "module"
+}
