@@ -45,12 +45,12 @@ export default function Navigation() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/#aanbod" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <Link to="/aanbod" className={`nav-link ${isActive("/aanbod")}`}>
                             {NAVIGATION.links.aanbod}
                         </Link>
                     </li>
                     <li>
-                        <Link to="/#over-mij" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <Link to="/over-mij" className={`nav-link ${isActive("/over-mij")}`}>
                             {NAVIGATION.links.overMij}
                         </Link>
                     </li>
