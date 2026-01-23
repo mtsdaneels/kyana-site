@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { MetaFunction } from "@remix-run/cloudflare";
 import InfoCard from "~/components/cards/InfoCard";
 import SectionHeader from "~/components/SectionHeader";
@@ -15,8 +14,6 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Contact() {
-    const [isRevealed, setIsRevealed] = useState(false);
-
     const cardBaseStyle = {
         height: "100%",
         display: "flex",
@@ -52,50 +49,18 @@ export default function Contact() {
                                     padding: undefined, // Let CSS handle it
                                 }}
                             >
-                                <div style={{ position: "relative", minHeight: "210px" }}>
-                                    {/* Content cross-fades in */}
-                                    <div style={{
-                                        opacity: isRevealed ? 1 : 0,
-                                        visibility: isRevealed ? "visible" : "hidden",
-                                        transition: "opacity 0.4s ease, visibility 0.4s ease",
-                                        pointerEvents: isRevealed ? "auto" : "none",
-                                        padding: "var(--spacing-md) 0",
-                                    }}>
-                                        <div style={{ marginBottom: "var(--spacing-md)" }}>
-                                            <p style={{ fontWeight: "800", marginBottom: "4px", color: "var(--text-primary)", fontSize: "0.9rem" }}>
-                                                {CONTACT_PAGE.contacts.phoneLabel}
-                                            </p>
-                                            <p style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: 0 }}>{CONTACT_INFO.phone}</p>
-                                        </div>
-                                        <div>
-                                            <p style={{ fontWeight: "800", marginBottom: "4px", color: "var(--text-primary)", fontSize: "0.9rem" }}>
-                                                {CONTACT_PAGE.contacts.emailLabel}
-                                            </p>
-                                            <p style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: 0, wordBreak: "break-all" }}>{CONTACT_INFO.email}</p>
-                                        </div>
+                                <div>
+                                    <div style={{ marginBottom: "var(--spacing-md)" }}>
+                                        <p style={{ fontWeight: "800", marginBottom: "4px", color: "var(--text-primary)", fontSize: "0.9rem" }}>
+                                            {CONTACT_PAGE.contacts.phoneLabel}
+                                        </p>
+                                        <p style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: 0 }}>{CONTACT_INFO.phone}</p>
                                     </div>
-
-                                    {/* Button cross-fades out */}
-                                    <div style={{
-                                        position: "absolute",
-                                        top: 0,
-                                        left: 0,
-                                        right: 0,
-                                        bottom: 0,
-                                        display: "flex",
-                                        padding: "var(--spacing-md) 0",
-                                        opacity: isRevealed ? 0 : 1,
-                                        visibility: isRevealed ? "hidden" : "visible",
-                                        transition: "opacity 0.4s ease, visibility 0.4s ease",
-                                        pointerEvents: isRevealed ? "none" : "auto"
-                                    }}>
-                                        <button
-                                            onClick={() => setIsRevealed(true)}
-                                            className="btn btn-primary"
-                                            style={{ width: "100%", padding: "var(--spacing-sm)" }}
-                                        >
-                                            Toon contactgegevens
-                                        </button>
+                                    <div>
+                                        <p style={{ fontWeight: "800", marginBottom: "4px", color: "var(--text-primary)", fontSize: "0.9rem" }}>
+                                            {CONTACT_PAGE.contacts.emailLabel}
+                                        </p>
+                                        <p style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: 0, wordBreak: "break-all" }}>{CONTACT_INFO.email}</p>
                                     </div>
                                 </div>
                             </InfoCard>

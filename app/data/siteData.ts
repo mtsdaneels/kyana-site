@@ -80,7 +80,6 @@ export const HOMEPAGE_CONTENT = {
     },
     hero: {
         cta: {
-            bookSession: "Boek een Sessie",
             contact: "Neem Contact Op",
         }
     },
@@ -106,6 +105,5 @@ export const NAVIGATION = {
         aanbod: "Aanbod",
         overMij: "Over mij",
         contact: "Contact",
-        boeken: "Boeken",
     }
 };

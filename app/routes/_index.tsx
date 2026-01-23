@@ -37,20 +37,26 @@ export default function Index() {
       <SectionSeparator />
 
       {/* Call to Action Buttons */}
-      <section className="section" style={{ paddingTop: "0" }}>
-        <div className="container text-center">
+      <section className="section" style={{ padding: "var(--spacing-xl) 0" }}>
+        <div className="container">
           <div
             style={{
               display: "flex",
-              gap: "var(--spacing-md)",
               justifyContent: "center",
-              flexWrap: "wrap",
+              alignItems: "center",
             }}
           >
-            <Link to="/boeken" className="btn btn-primary">
-              {HOMEPAGE_CONTENT.hero.cta.bookSession}
-            </Link>
-            <Link to="/contact" className="btn btn-secondary">
+            <Link
+              to="/contact"
+              className="btn btn-primary"
+              style={{
+                minWidth: "280px",
+                padding: "1.25rem 2rem",
+                fontSize: "1.2rem",
+                borderRadius: "16px",
+                boxShadow: "0 10px 15px -3px rgba(255, 131, 85, 0.2)"
+              }}
+            >
               {HOMEPAGE_CONTENT.hero.cta.contact}
             </Link>
           </div>

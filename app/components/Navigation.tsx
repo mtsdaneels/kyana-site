@@ -59,11 +59,6 @@ export default function Navigation() {
                             {NAVIGATION.links.contact}
                         </Link>
                     </li>
-                    <li>
-                        <Link to="/boeken" className={`nav-link ${isActive("/boeken")}`}>
-                            {NAVIGATION.links.boeken}
-                        </Link>
-                    </li>
                 </ul>
             </div>
         </nav>
