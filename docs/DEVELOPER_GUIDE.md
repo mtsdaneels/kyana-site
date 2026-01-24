@@ -1,4 +1,4 @@
-# TypingPro Website - Developer Guide
+# Typen met Kyana - Developer Guide
 
 A modern, modular typing classes website built with Remix and Cloudflare Workers.
 
@@ -24,11 +24,11 @@ app/
 │   ├── ProgressBar.tsx  # Progress/stat bars
 │   └── SectionHeader.tsx # Page headers
 ├── data/                # Content and configuration
-│   ├── bookingData.ts   # Booking-related data
 │   └── siteData.ts      # Site content data
 ├── routes/              # Page routes
 │   ├── _index.tsx       # Home page
-│   ├── book.tsx         # Booking page
+│   ├── aanbod.tsx       # Offerings page
+│   ├── over-mij.tsx     # About me page
 │   └── contact.tsx      # Contact page
 ├── styles/
 │   └── global.css       # Global styles and design system
@@ -43,20 +43,12 @@ app/
 All text content is centralized in the `data/` folder for easy updates:
 
 **Site Content** (`app/data/siteData.ts`):
-- `FEATURES` - What Our Classes Offer section
-- `PRICING_PLANS` - Class pricing options
-- `STUDENT_STATS` - Student results statistics
+- `TYP10_CONTENT` - Information about the Typ10 method
 - `INSTRUCTOR_INFO` - Instructor biography and qualifications
-- `LOCATION_INFO` - Studio and online class information
-- `CONTACT_INFO` - Phone, email, and hours
-
-**Booking Data** (`app/data/bookingData.ts`):
-- `CLASS_PACKAGES` - Available class packages
-- `SESSION_TYPES` - In-person or online options
-- `TIME_SLOTS` - Available booking times
-- `BOOKING_STEPS` - Booking process steps
-- `PAYMENT_METHODS` - Accepted payment methods
-- `CANCELLATION_POLICY` - Cancellation terms
+- `LOCATION_INFO` - Studio information and map
+- `CONTACT_INFO` - Phone and email
+- `AANBOD_PAGE` - Content for the offerings page
+- `CONTACT_PAGE` - Content for the contact page
 
 ### Updating Styles
 
@@ -108,12 +100,10 @@ Global styles are in `app/styles/global.css`:
 }
 ```
 
-**Add a new time slot** (Booking page):
-1. Open `app/data/bookingData.ts`
-2. Add to `TIME_SLOTS` array:
-```typescript
-{ value: "18:00", label: "6:00 PM" }
-```
+### Adding New Content
+Most content is added by extending the objects in `app/data/siteData.ts`. For example, to add a new practical item to the Aanbod page:
+1. Open `app/data/siteData.ts`
+2. Add to `AANBOD_PAGE.practical.items` array.
 
 ## 🧩 Reusable Components
 
@@ -298,7 +288,6 @@ export async function action({ request }: ActionFunctionArgs) {
 | What You Want to Change | File to Edit |
 |------------------------|-------------|
 | Site text/content | `app/data/siteData.ts` |
-| Booking options | `app/data/bookingData.ts` |
 | Colors/fonts | `app/styles/global.css` |
 | Navigation links | `app/components/Navigation.tsx` |
 | Page layouts | `app/routes/*.tsx` |

@@ -8,7 +8,6 @@ This project follows a modular, component-based architecture with clear separati
 ┌─────────────────────────────────────────┐
 │          DATA LAYER (Content)           │
 │  • siteData.ts - Site content          │
-│  • bookingData.ts - Booking options    │
 └──────────────┬──────────────────────────┘
                │
                ▼
@@ -24,8 +23,9 @@ This project follows a modular, component-based architecture with clear separati
 ┌─────────────────────────────────────────┐
 │         PAGE LAYER (Routes)             │
 │  • Home (_index.tsx)                   │
+│  • Aanbod (aanbod.tsx)                 │
+│  • Over Mij (over-mij.tsx)             │
 │  • Contact (contact.tsx)               │
-│  • Booking (book.tsx)                  │
 └──────────────┬──────────────────────────┘
                │
                ▼

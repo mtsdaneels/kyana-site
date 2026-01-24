@@ -1,13 +1,27 @@
-# Afbeeldingenmap
+# Kyana Site
 
-Deze map is voor publieke assets zoals afbeeldingen.
+A modern, fast, and modular website for typing classes, built with Remix and Cloudflare Workers.
 
-## Toe te voegen bestanden:
+## 🚀 Getting Started
 
-1. **background.jpg** (of .png) - Achtergrondafbeelding voor de hero sectie
-   - Aanbevolen grootte: minimaal 1920x1080px
+```bash
+npm install
+npm run dev
+```
 
-2. **teacher-photo.png** - Foto van de docent
-   - Aanbevolen grootte: minimaal 800x800px (portret)
+## 📚 Documentation
 
-Zie `IMAGE_GUIDE.md` in de hoofdmap voor uitgebreide instructies.
+Detailed documentation can be found in the [**docs/**](./docs/README.md) folder:
+
+- [**Quick Start**](./docs/QUICKSTART.md) - Get up and running.
+- [**Repo Navigation**](./docs/REPO_NAVIGATION.md) - Find your way around.
+- [**Architecture**](./docs/ARCHITECTURE.md) - How it's built.
+- [**Developer Guide**](./docs/DEVELOPER_GUIDE.md) - How to make changes.
+- [**Image Guide**](./docs/IMAGE_GUIDE.md) - Managing assets.
+
+## 🛠️ Tech Stack
+
+- **Remix** (Web Framework)
+- **Cloudflare Workers** (Deployment)
+- **TypeScript** (Language)
+- **CSS** (Styling)

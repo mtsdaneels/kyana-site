@@ -1,11 +1,16 @@
 import InfoCard from "../cards/InfoCard";
-import { LOCATION_INFO, HOMEPAGE_CONTENT } from "~/data/siteData";
+import SectionHeader from "../SectionHeader";
+import { LOCATION_INFO } from "~/data/siteData";
 
 export default function LocationSection() {
     return (
-        <section className="section" style={{ background: "var(--bg-accent-light)" }}>
+        <section className="section" style={{ background: "var(--bg-accent-light)", paddingTop: "var(--spacing-xl)", marginTop: "var(--spacing-xl)" }}>
             <div className="container">
-                <h2 className="text-center mb-xl">{HOMEPAGE_CONTENT.sections.location.title}</h2>
+                <SectionHeader
+                    title={LOCATION_INFO.title}
+                    subtitle={LOCATION_INFO.subtitle}
+                    centered={true}
+                />
                 <div style={{ maxWidth: "800px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "var(--spacing-lg)", alignItems: "stretch" }}>
                     <div style={{ display: "flex" }}>
                         <InfoCard>

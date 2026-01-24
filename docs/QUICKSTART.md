@@ -1,16 +1,15 @@
-# TypingPro Website - Quick Start
+# Typen met Kyana - Quick Start
 
 ## ✨ What Was Built
 
 A **fully modular, production-ready** typing classes website with:
 
-- ✅ **3 Pages**: Home, Contact, Booking
-- ✅ **13 Reusable Components**: Forms, cards, sections
-- ✅ **2 Data Files**: Centralized content management
-- ✅ **Modern Design**: Dark theme, gradients, animations
-- ✅ **Form Validation**: Server-side validation for security
-- ✅ **Responsive**: Mobile-friendly by default
-- ✅ **Type-Safe**: Full TypeScript support
+- ✅ **4 Pages**: Home, Aanbod, Over Mij, Contact
+- ✅ **Modular Components**: Integrated UI elements for consistent design
+- ✅ **Centralized Data**: Content management through `app/data/siteData.ts`
+- ✅ **Interactive Design**: Modern aesthetics, animations, and responsive layout
+- ✅ **Clean SEO**: Meta tags and semantic structure on all pages
+- ✅ **Type-Safe**: Full TypeScript implementation
 
 ## 🚀 Getting Started
 
@@ -49,12 +48,6 @@ export const INSTRUCTOR_INFO = {
 };
 ```
 
-### Change Pricing
-Edit `app/data/siteData.ts` → `PRICING_PLANS` array
-
-### Add/Remove Time Slots
-Edit `app/data/bookingData.ts` → `TIME_SLOTS` array
-
 ### Update Contact Info
 Edit `app/data/siteData.ts` → `CONTACT_INFO` object
 
@@ -73,13 +66,13 @@ app/
 │   └── SectionHeader.tsx   # Page headers
 │
 ├── data/                   # All content in one place!
-│   ├── siteData.ts         # Site content (instructor, features, etc.)
-│   └── bookingData.ts      # Booking options (times, packages, etc.)
+│   └── siteData.ts         # Site content (instructor, features, etc.)
 │
-├── routes/                 # Your 3 pages
+├── routes/                 # Your 4 pages
 │   ├── _index.tsx          # Home page
-│   ├── contact.tsx         # Contact page (with form)
-│   └── book.tsx            # Booking page (with form)
+│   ├── aanbod.tsx          # Offerings page
+│   ├── over-mij.tsx        # About me page
+│   └── contact.tsx         # Contact page
 │
 ├── styles/
 │   └── global.css          # Design system & CSS variables
@@ -103,9 +96,8 @@ Example: The `FeatureCard` component is used 3 times on the home page:
 ```
 
 ### Centralized Content
-All text, prices, and options are in **data files**:
-- Change instructor info → Edit `siteData.ts`
-- Change booking times → Edit `bookingData.ts`
+All text and options are in **data files**:
+- Change instructor info/site text → Edit `siteData.ts`
 - **No need to touch page code!**
 
 ### Form Validation
@@ -160,13 +152,8 @@ Find/replace "TypingPro" across the project, or update:
 Currently, forms log to console. To connect to real services:
 
 **Contact Form** (`app/routes/contact.tsx`):
-- Replace `console.log` in the `action` function
-- Add email service (SendGrid, Resend, etc.)
-
-**Booking Form** (`app/routes/book.tsx`):
-- Replace `console.log` in the `action` function
-- Add calendar integration (Calendly API, Google Calendar)
-- Add payment processing (Stripe, PayPal)
+- Currently setup to handle submissions via WhatsApp/Email links
+- Can be extended to connect to real services (SendGrid, Resend, etc.)
 
 ## 📚 Documentation
 

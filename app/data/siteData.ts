@@ -41,6 +41,8 @@ export const TYP10_CONTENT = {
 };
 
 export const LOCATION_INFO = {
+    title: "Locatie",
+    subtitle: "Alle lessen gaan door in Praktijk Boost in Ingelmunster",
     inPerson: {
         name: "Praktijk Boost!",
         address: {
@@ -107,3 +109,65 @@ export const NAVIGATION = {
         contact: "Contact",
     }
 };
+
+export const AANBOD_PAGE = {
+    seo: {
+        title: "Ons Aanbod",
+        description: "Bekijk ons aanbod aan typlessen. We leren kinderen blind typen met de Typ10 methode in een speelse omgeving.",
+    },
+    hero: {
+        title: "Blind Typen",
+        intro: [
+            "In de digitale wereld van vandaag is blind kunnen typen een enorme troef voor elk kind. Het bespaart tijd, verhoogt de concentratie en zorgt voor minder frustratie bij schoolwerk.",
+            "Met mijn persoonlijke aanpak en de speelse <strong>Typ10 methode</strong> zorgen we ervoor dat dit leerproces vlot, motiverend en vooral succesvol verloopt. Een methode dat werkt voor elk kind."
+        ]
+    },
+    practical: {
+        title: "Praktische Informatie",
+        subtitle: "Wat je moet weten over de lessenreeks.",
+        items: [
+            {
+                title: "Duurtijd",
+                content: "Een volledige reeks bestaat uit <strong>10 lessen van 1 uur</strong>. Dit geeft voldoende tijd om de methode goed onder de knie te krijgen."
+            },
+            {
+                title: "Groepsgrootte",
+                content: "We werken in zeer kleine groepen van <strong>1 tot 3 kinderen</strong>. Zo krijgt elk kind de persoonlijke aandacht die het nodig heeft."
+            },
+            {
+                title: "Oefenen",
+                content: "Naast de wekelijkse les krijgt het kind toegang tot een <strong>online platform</strong> om thuis spelenderwijs verder te oefenen."
+            }
+        ]
+    },
+    methodology: {
+        title: "De Typ10 Methode",
+        content: [
+            "Typ10 is een kindvriendelijke methode om blind te leren typen. In plaats van saaie herhalingen gebruiken we kleuren, figuren en verhalen om het leerproces leuk en effectief te maken.",
+            "Deze aanpak is speciaal ontwikkeld om rekening te houden met verschillende leerstijlen. Hierdoor kan elk kind, ook wanneer er extra ondersteuningsnoden zijn, op eigen tempo leren typen."
+        ]
+    },
+    pricing: {
+        title: "Tarieven",
+        subtitle: "De prijs van een lessenreeks ligt in lijn met de standaard tarieven voor Typ10 en wordt bepaald door de onderliggende praktijk.",
+        tiers: [
+            {
+                label: "Individueel",
+                description: "1-op-1 begeleiding voor maximale begeleiding.",
+                priceInfo: "€275 voor 10 lessen",
+                features: ["Inclusief toegang tot het online platform <br /> voor twee jaar"]
+            },
+            {
+                label: "Groepje (2-3 kinderen)",
+                description: "Samen leren met broers/zussen, vriendjes of leeftijdsgenoten.",
+                priceInfo: "Gereduceerd tarief",
+                features: ["Inclusief toegang tot het online platform <br /> voor twee jaar"]
+            }
+        ],
+        externalLink: {
+            label: "Bekijk de meest recente prijzen op de website van Praktijk Boost!",
+            url: "https://www.praktijkboost.be/tarieven.php#typ10"
+        }
+    }
+};
+
