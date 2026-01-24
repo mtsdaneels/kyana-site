@@ -2,16 +2,25 @@ import { INSTRUCTOR_INFO } from "~/data/siteData";
 import SectionHeader from "~/components/SectionHeader";
 import FeatureBox from "~/components/FeatureBox";
 
-export default function AboutSection() {
+export default function AboutSection({ showHeader = true, isStandalone = false }: { showHeader?: boolean, isStandalone?: boolean }) {
     return (
-        <section id="over-mij" className="section" style={{ paddingTop: "var(--spacing-md)", paddingBottom: "var(--spacing-md)" }}>
+        <section
+            id="over-mij"
+            className="section"
+            style={{
+                paddingTop: isStandalone ? "var(--spacing-2xl)" : "var(--spacing-md)",
+                paddingBottom: "var(--spacing-md)"
+            }}
+        >
             <div className="container">
-                <SectionHeader
-                    title="Over Mij"
-                    centered={true}
-                />
+                {showHeader && (
+                    <SectionHeader
+                        title="Over Mij"
+                        centered={true}
+                    />
+                )}
 
-                <FeatureBox style={{ marginTop: "var(--spacing-lg)" }}>
+                <FeatureBox style={{ marginTop: showHeader ? "var(--spacing-lg)" : "0" }}>
                     <div className="grid grid-2" style={{ alignItems: "center", gap: "var(--spacing-xl)" }}>
                         {/* Teacher Photo - Left Side */}
                         <div style={{

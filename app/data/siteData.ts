@@ -12,6 +12,17 @@ export const INSTRUCTOR_INFO = {
     ],
 };
 
+export const OVER_MIJ_PAGE = {
+    education: {
+        title: "Opleiding & Ervaring",
+        content: [
+            "Van opleiding heb ik zowel een <strong>Bachelor in de Ergotherapie</strong> als een <strong>Educatieve Bachelor Lager Onderwijs</strong>.",
+            "Op dagelijkse basis ben ik leefcoach bij Groep Ubuntu, waar ik mensen met een beperking begeleid in hun dagelijkse leven. Hiernaast werk ik als zelfstandige in bijberoep waar ik kinderen en jongeren begeleid met bijles, schrijfmotoriek en typen.",
+            "Ondertussen ben ik al een jaar aangesloten bij Praktijk Boost en heb ik al tientallen kinderen en jongeren geholpen. Elk kind krijgt een <strong>individuele aanpak</strong> dat past bij zijn of haar noden."
+        ]
+    }
+};
+
 
 export const TYP10_CONTENT = {
     title: "Leren Typen",
@@ -96,12 +107,11 @@ export const HOMEPAGE_CONTENT = {
 export const GLOBAL_UI = {
     footer: {
         rights: "Alle rechten voorbehouden.",
-        tagline: "Professionele typlessen voor kinderen en jongeren",
     }
 };
 
 export const NAVIGATION = {
-    brand: "Typen met Kyana",
+    brand: "Kyana De Bosschere",
     links: {
         home: "Home",
         aanbod: "Aanbod",

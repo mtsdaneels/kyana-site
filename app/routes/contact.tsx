@@ -25,7 +25,7 @@ export default function Contact() {
 
     return (
         <div style={{ backgroundColor: "#ffffff", minHeight: "100vh" }}>
-            <section className="section" style={{ paddingTop: "var(--spacing-2xl)" }}>
+            <section className="section">
                 <div className="container">
                     <div className="contact-header-box">
                         <SectionHeader
