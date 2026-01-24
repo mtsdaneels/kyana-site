@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
-import { Link } from "@remix-run/react";
+import Button from "~/components/Button";
 
 import InstructorSection from "~/components/sections/InstructorSection";
 import LocationSection from "~/components/sections/LocationSection";
@@ -37,28 +37,33 @@ export default function Index() {
       <SectionSeparator />
 
       {/* Call to Action Buttons */}
-      <section className="section" style={{ padding: "var(--spacing-xl) 0" }}>
+      <section className="section" style={{ padding: "var(--spacing-md) 0" }}>
         <div className="container">
           <div
             style={{
               display: "flex",
+              flexWrap: "wrap",
               justifyContent: "center",
               alignItems: "center",
+              gap: "var(--spacing-md)"
             }}
           >
-            <Link
+            <Button
+              to="/aanbod"
+              variant="secondary"
+              size="lg"
+              className="shadow-premium"
+            >
+              {HOMEPAGE_CONTENT.hero.cta.aanbod}
+            </Button>
+            <Button
               to="/contact"
-              className="btn btn-primary"
-              style={{
-                minWidth: "280px",
-                padding: "1.25rem 2rem",
-                fontSize: "1.2rem",
-                borderRadius: "16px",
-                boxShadow: "0 10px 15px -3px rgba(255, 131, 85, 0.2)"
-              }}
+              variant="primary"
+              size="lg"
+              className="shadow-premium"
             >
               {HOMEPAGE_CONTENT.hero.cta.contact}
-            </Link>
+            </Button>
           </div>
         </div>
       </section>

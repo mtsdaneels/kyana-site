@@ -4,7 +4,7 @@ import { LOCATION_INFO } from "~/data/siteData";
 
 export default function LocationSection() {
     return (
-        <section className="section" style={{ background: "var(--bg-accent-light)", paddingTop: "var(--spacing-xl)", marginTop: "var(--spacing-xl)" }}>
+        <section className="section" style={{ background: "var(--bg-accent-light)", paddingTop: "var(--spacing-xl)", paddingBottom: "var(--spacing-xl)", marginTop: "var(--spacing-md)" }}>
             <div className="container">
                 <SectionHeader
                     title={LOCATION_INFO.title}

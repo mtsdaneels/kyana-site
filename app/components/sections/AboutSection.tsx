@@ -1,4 +1,5 @@
-import { INSTRUCTOR_INFO } from "~/data/siteData";
+import Button from "~/components/Button";
+import { INSTRUCTOR_INFO, HOMEPAGE_CONTENT } from "~/data/siteData";
 import SectionHeader from "~/components/SectionHeader";
 import FeatureBox from "~/components/FeatureBox";
 
@@ -103,6 +104,14 @@ export default function AboutSection({ showHeader = true, isStandalone = false }
                                             </li>
                                         ))}
                                     </ul>
+                                </div>
+                            )}
+
+                            {!isStandalone && (
+                                <div style={{ marginTop: "var(--spacing-lg)" }}>
+                                    <Button to="/over-mij">
+                                        {HOMEPAGE_CONTENT.sections.about.cta}
+                                    </Button>
                                 </div>
                             )}
                         </div>

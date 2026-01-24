@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
-import { Link } from "@remix-run/react";
+import Button from "~/components/Button";
 import { NAVIGATION, OVER_MIJ_PAGE, INSTRUCTOR_INFO, HOMEPAGE_CONTENT } from "~/data/siteData";
 import FeatureBox from "~/components/FeatureBox";
 import SectionHeader from "~/components/SectionHeader";
@@ -84,19 +84,24 @@ export default function OverMij() {
                                     }} dangerouslySetInnerHTML={{ __html: text }} />
                                 ))}
 
-                                <Link
-                                    to="/contact"
-                                    className="btn btn-primary"
-                                    style={{
-                                        padding: "1rem 2.5rem",
-                                        fontSize: "1.05rem",
-                                        borderRadius: "14px",
-                                        boxShadow: "0 10px 15px -3px rgba(255, 131, 85, 0.2)",
-                                        display: "inline-block"
-                                    }}
-                                >
-                                    {HOMEPAGE_CONTENT.hero.cta.contact}
-                                </Link>
+                                <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-md)" }}>
+                                    <Button
+                                        to="/aanbod"
+                                        variant="secondary"
+                                        size="lg"
+                                        className="shadow-premium"
+                                    >
+                                        {HOMEPAGE_CONTENT.hero.cta.aanbod}
+                                    </Button>
+                                    <Button
+                                        to="/contact"
+                                        variant="primary"
+                                        size="lg"
+                                        className="shadow-premium"
+                                    >
+                                        {HOMEPAGE_CONTENT.hero.cta.contact}
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </FeatureBox>

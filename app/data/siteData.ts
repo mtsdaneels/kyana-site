@@ -94,9 +94,16 @@ export const HOMEPAGE_CONTENT = {
     hero: {
         cta: {
             contact: "Neem Contact Op",
+            aanbod: "Bekijk het Aanbod",
         }
     },
     sections: {
+        instructor: {
+            cta: "Ontdek het Aanbod",
+        },
+        about: {
+            cta: "Lees meer over mij",
+        },
         location: {
             title: "Locatie",
         }
@@ -155,7 +162,8 @@ export const AANBOD_PAGE = {
         content: [
             "Typ10 is een kindvriendelijke methode om blind te leren typen. In plaats van saaie herhalingen gebruiken we kleuren, figuren en verhalen om het leerproces leuk en effectief te maken.",
             "Deze aanpak is speciaal ontwikkeld om rekening te houden met verschillende leerstijlen. Hierdoor kan elk kind, ook wanneer er extra ondersteuningsnoden zijn, op eigen tempo leren typen."
-        ]
+        ],
+        cta: "Enthousiast? Neem contact op!"
     },
     pricing: {
         title: "Tarieven",
@@ -177,7 +185,8 @@ export const AANBOD_PAGE = {
         externalLink: {
             label: "Bekijk de meest recente prijzen op de website van Praktijk Boost!",
             url: "https://www.praktijkboost.be/tarieven.php#typ10"
-        }
+        },
+        cta: "Maak een afspraak"
     }
 };
 

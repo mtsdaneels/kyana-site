@@ -1,10 +1,11 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
+import Button from "~/components/Button";
 import Typ10Section from "~/components/sections/Typ10Section";
 import LocationSection from "~/components/sections/LocationSection";
 import SectionSeparator from "~/components/SectionSeparator";
 import FeatureBox from "~/components/FeatureBox";
 import SectionHeader from "~/components/SectionHeader";
-import { NAVIGATION, AANBOD_PAGE, INSTRUCTOR_INFO } from "~/data/siteData";
+import { NAVIGATION, AANBOD_PAGE, INSTRUCTOR_INFO, HOMEPAGE_CONTENT } from "~/data/siteData";
 
 export const meta: MetaFunction = () => {
     return [
@@ -46,6 +47,12 @@ export default function Aanbod() {
                                         marginBottom: index === AANBOD_PAGE.hero.intro.length - 1 ? 0 : "var(--spacing-md)"
                                     }} dangerouslySetInnerHTML={{ __html: text }} />
                                 ))}
+
+                                <div style={{ marginTop: "var(--spacing-lg)" }}>
+                                    <Button to="/over-mij" variant="primary">
+                                        {HOMEPAGE_CONTENT.sections.about.cta}
+                                    </Button>
+                                </div>
                             </div>
 
                             {/* Image - Right Side */}
@@ -168,6 +175,12 @@ export default function Aanbod() {
                                         dangerouslySetInnerHTML={{ __html: text }}
                                     />
                                 ))}
+
+                                <div style={{ marginTop: "var(--spacing-lg)" }}>
+                                    <Button to="/contact" variant="primary">
+                                        {AANBOD_PAGE.methodology.cta}
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </FeatureBox>
@@ -266,7 +279,7 @@ export default function Aanbod() {
                             ))}
                         </div>
 
-                        <div style={{ textAlign: "center" }}>
+                        <div style={{ textAlign: "center", marginTop: "var(--spacing-xl)" }}>
                             <a
                                 href={AANBOD_PAGE.pricing.externalLink.url}
                                 target="_blank"
@@ -278,11 +291,21 @@ export default function Aanbod() {
                                     fontWeight: "600",
                                     background: "none",
                                     padding: 0,
-                                    fontSize: "1.05rem"
+                                    fontSize: "1.05rem",
+                                    display: "block",
+                                    marginBottom: "var(--spacing-lg)"
                                 }}
                             >
                                 {AANBOD_PAGE.pricing.externalLink.label}
                             </a>
+
+                            <Button
+                                to="/contact"
+                                size="lg"
+                                className="shadow-premium"
+                            >
+                                {AANBOD_PAGE.pricing.cta}
+                            </Button>
                         </div>
                     </FeatureBox>
                 </div>

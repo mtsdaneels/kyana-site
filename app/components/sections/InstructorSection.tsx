@@ -1,4 +1,5 @@
-import { TYP10_CONTENT } from "~/data/siteData";
+import Button from "~/components/Button";
+import { TYP10_CONTENT, HOMEPAGE_CONTENT } from "~/data/siteData";
 import FeatureBox from "~/components/FeatureBox";
 
 export default function InstructorSection() {
@@ -44,6 +45,12 @@ export default function InstructorSection() {
                                     dangerouslySetInnerHTML={{ __html: TYP10_CONTENT.intro }}
                                 />
                             )}
+
+                            <div style={{ marginTop: "var(--spacing-lg)" }}>
+                                <Button to="/aanbod">
+                                    {HOMEPAGE_CONTENT.sections.instructor.cta}
+                                </Button>
+                            </div>
                         </div>
 
                         {/* Image - Right Side */}

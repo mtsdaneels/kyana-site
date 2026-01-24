@@ -1,4 +1,5 @@
-import { TYP10_CONTENT } from "~/data/siteData";
+import Button from "~/components/Button";
+import { TYP10_CONTENT, HOMEPAGE_CONTENT } from "~/data/siteData";
 import SectionHeader from "~/components/SectionHeader";
 import FeatureBox from "~/components/FeatureBox";
 
@@ -58,6 +59,12 @@ export default function Typ10Section() {
                             </FeatureBox>
                         );
                     })}
+                </div>
+
+                <div style={{ textAlign: "center", marginTop: "var(--spacing-xl)" }}>
+                    <Button to="/aanbod" size="lg">
+                        {HOMEPAGE_CONTENT.sections.instructor.cta}
+                    </Button>
                 </div>
             </div>
         </section>
