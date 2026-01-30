@@ -461,6 +461,8 @@ nav {
     z-index: 1000;
 }
 
+
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -468,6 +470,8 @@ nav {
     padding: var(--spacing-md) var(--spacing-sm);
     max-width: 1600px;
     margin: 0 auto;
+    min-height: 80px;
+    /* Ensure sufficient height for mobile toggle */
 }
 
 
@@ -573,6 +577,76 @@ footer {
    RESPONSIVE
    =========================== */
 
+/* Mobile Menu Toggle - Global (Mobile First) */
+/* Mobile Menu Toggle - Global (Mobile First) */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 3000;
+
+    /* Position Absolute to sit on the right */
+    position: absolute;
+    right: 2rem;
+    top: auto;
+    bottom: 5px;
+    /* Forced close to the bottom */
+    transform: none;
+    /* Remove vertical centering */
+
+    width: 44px;
+    height: 44px;
+    overflow: visible;
+    /* Prevent clipping */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 30px;
+    /* Increased from 25px for better visibility */
+    height: 3px;
+    background-color: #000000 !important;
+    /* Force Black */
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+/* Open State - Absolute Positioning for Perfect X */
+.menu-toggle.open .bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform-origin: center;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+
+/* Hide toggle on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
 @media (max-width: 1024px) {
     .nav-links {
         gap: 1.5rem;
@@ -623,38 +697,6 @@ footer {
         color: var(--primary-color);
     }
 
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        z-index: 2100;
-        position: relative;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 2px;
-        background: var(--text-primary);
-        margin: 5px 0;
-        transition: 0.3s;
-    }
-
-    .menu-toggle.open span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-toggle.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.open span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
     .section {
         padding: var(--spacing-xl) 0;
     }
@@ -679,9 +721,4 @@ footer {
     h2 {
         font-size: 1.75rem;
     }
-}
-
-/* Hide toggle on desktop */
-.menu-toggle {
-    display: none;
 }
