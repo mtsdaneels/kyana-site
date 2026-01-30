@@ -22,7 +22,7 @@ export default function AboutSection({ showHeader = true, isStandalone = false }
                 )}
 
                 <FeatureBox style={{ marginTop: showHeader ? "var(--spacing-lg)" : "0" }}>
-                    <div className="grid grid-2" style={{ alignItems: "center", gap: "var(--spacing-xl)" }}>
+                    <div className="grid grid-2 gap-xl" style={{ alignItems: "center" }}>
                         {/* Teacher Photo - Left Side */}
                         <div style={{
                             display: "flex",

@@ -7,12 +7,9 @@ export default function InstructorSection() {
         <section className="section" style={{ paddingBottom: "var(--spacing-md)" }}>
             <div className="container">
                 <FeatureBox>
-                    <div className="grid grid-2" style={{
-                        alignItems: "center",
-                        gap: "var(--spacing-2xl)"
-                    }}>
+                    <div className="instructor-grid">
                         {/* Text - Left Side */}
-                        <div style={{ textAlign: "left" }}>
+                        <div className="instructor-text">
                             <h1 style={{
                                 color: "var(--primary-color)",
                                 marginBottom: "var(--spacing-md)",
@@ -54,11 +51,7 @@ export default function InstructorSection() {
                         </div>
 
                         {/* Image - Right Side */}
-                        <div style={{
-                            display: "flex",
-                            justifyContent: "flex-end",
-                            alignItems: "center"
-                        }}>
+                        <div className="instructor-image-container">
                             <img
                                 src="/typ10.png"
                                 alt="Typ10 Leren Typen Logo"

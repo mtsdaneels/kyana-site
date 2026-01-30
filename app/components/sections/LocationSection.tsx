@@ -11,7 +11,7 @@ export default function LocationSection() {
                     subtitle={LOCATION_INFO.subtitle}
                     centered={true}
                 />
-                <div style={{ maxWidth: "800px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "var(--spacing-lg)", alignItems: "stretch" }}>
+                <div className="location-grid">
                     <div style={{ display: "flex" }}>
                         <InfoCard>
                             <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>

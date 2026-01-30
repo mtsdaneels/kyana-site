@@ -131,10 +131,13 @@ a:hover {
     padding-top: var(--spacing-lg);
 }
 
+
 .section-hero {
     padding: var(--spacing-2xl) 0;
     background: var(--bg-secondary);
     position: relative;
+    overflow: hidden;
+    /* Prevent horizontal scroll from decorations */
 }
 
 
@@ -279,6 +282,51 @@ a:hover {
     }
 }
 
+/* ===========================
+   SECTION SPECIFIC STYLES
+   =========================== */
+
+/* Instructor Section Responsive */
+.instructor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+}
+
+.instructor-image-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .instructor-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .instructor-image-container {
+        justify-content: center;
+        order: -1;
+        /* Image on top on mobile? Or keep bottom? Let's keep bottom for flow or top for visual? 
+                      Usually Hero image on top. But this is "Introduction". 
+                      Standard is Text -> Image. I'll keep default order. */
+        margin-bottom: var(--spacing-md);
+    }
+
+    .instructor-grid>div:first-child {
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .instructor-grid h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 /* Contact Page Styles */
 .contact-header-box {
@@ -321,6 +369,49 @@ a:hover {
 
 .grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Gap Utilities responsive */
+.gap-md {
+    gap: var(--spacing-md);
+}
+
+.gap-lg {
+    gap: var(--spacing-lg);
+}
+
+.gap-xl {
+    gap: var(--spacing-xl);
+}
+
+.gap-2xl {
+    gap: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .gap-xl {
+        gap: var(--spacing-lg);
+    }
+
+    .gap-2xl {
+        gap: var(--spacing-lg);
+    }
+}
+
+.location-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    align-items: stretch;
+}
+
+@media (max-width: 480px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+        /* Force stack on very small screens */
+    }
 }
 
 /* Forms */

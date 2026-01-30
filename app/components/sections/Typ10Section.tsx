@@ -9,7 +9,7 @@ export default function Typ10Section() {
             <div className="container">
                 <SectionHeader title="Aanbod" centered={true} />
 
-                <div className="grid grid-3" style={{ gap: "var(--spacing-xl)" }}>
+                <div className="grid grid-3 gap-xl">
                     {TYP10_CONTENT.sections.map((section, index) => {
                         const isMainOrange = index === 0 || index === 2;
                         const bgColor = isMainOrange ? "var(--primary-color)" : "var(--bg-accent-light)";
