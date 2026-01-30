@@ -38,7 +38,7 @@ export default function AboutSection({ showHeader = true, isStandalone = false }
                             }}>
                                 <img
                                     src={INSTRUCTOR_INFO.image}
-                                    alt={INSTRUCTOR_INFO.name}
+                                    alt={`${INSTRUCTOR_INFO.name} - Typles Ingelmunster`}
                                     style={{
                                         width: "100%",
                                         height: "auto",
@@ -65,9 +65,7 @@ export default function AboutSection({ showHeader = true, isStandalone = false }
                                 lineHeight: "1.7",
                                 color: "var(--text-secondary)",
                                 marginBottom: "var(--spacing-lg)"
-                            }}>
-                                {INSTRUCTOR_INFO.bio}
-                            </p>
+                            }} dangerouslySetInnerHTML={{ __html: INSTRUCTOR_INFO.bio }} />
 
                             {INSTRUCTOR_INFO.qualifications.length > 0 && (
                                 <div>

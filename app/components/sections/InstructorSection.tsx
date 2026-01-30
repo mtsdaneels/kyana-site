@@ -13,14 +13,14 @@ export default function InstructorSection() {
                     }}>
                         {/* Text - Left Side */}
                         <div style={{ textAlign: "left" }}>
-                            <h2 style={{
+                            <h1 style={{
                                 color: "var(--primary-color)",
                                 marginBottom: "var(--spacing-md)",
                                 fontSize: "2.25rem",
                                 fontWeight: "600"
                             }}>
                                 {TYP10_CONTENT.title}
-                            </h2>
+                            </h1>
 
                             {Array.isArray(TYP10_CONTENT.intro) ? (
                                 TYP10_CONTENT.intro.map((text, index) => (
@@ -61,7 +61,7 @@ export default function InstructorSection() {
                         }}>
                             <img
                                 src="/typ10.png"
-                                alt="Typ10 logo"
+                                alt="Typ10 Leren Typen Logo"
                                 style={{
                                     maxWidth: "500px",
                                     width: "100%",

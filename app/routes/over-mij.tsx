@@ -8,11 +8,20 @@ import SectionSeparator from "~/components/SectionSeparator";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: `${NAVIGATION.links.overMij} - Typen met Kyana` },
+        { title: OVER_MIJ_PAGE.seo.title },
         {
             name: "description",
-            content: "Lees meer over Kyana en haar passie voor het aanleren van blind typen aan kinderen.",
+            content: OVER_MIJ_PAGE.seo.description,
         },
+        {
+            name: "keywords",
+            content: OVER_MIJ_PAGE.seo.keywords,
+        },
+        { property: "og:title", content: OVER_MIJ_PAGE.seo.title },
+        { property: "og:description", content: OVER_MIJ_PAGE.seo.description },
+        { property: "og:image", content: "https://kyanadebosschere.be/foto-3.jpeg" },
+        { property: "og:url", content: "https://kyanadebosschere.be/over-mij" },
+        { tagName: "link", rel: "canonical", href: "https://kyanadebosschere.be/over-mij" },
     ];
 };
 
@@ -52,13 +61,15 @@ export default function OverMij() {
                                     width: "100%"
                                 }}>
                                     <img
-                                        src={INSTRUCTOR_INFO.image}
+                                        src={INSTRUCTOR_INFO.overMijImage}
                                         alt={INSTRUCTOR_INFO.name}
                                         style={{
                                             width: "100%",
                                             height: "auto",
                                             display: "block",
-                                            objectFit: "cover"
+                                            objectFit: "cover",
+                                            transform: "scale(1.25)",
+                                            transformOrigin: "bottom"
                                         }}
                                     />
                                 </div>

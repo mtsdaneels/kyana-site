@@ -14,6 +14,15 @@ export const meta: MetaFunction = () => {
             name: "description",
             content: AANBOD_PAGE.seo.description,
         },
+        {
+            name: "keywords",
+            content: AANBOD_PAGE.seo.keywords,
+        },
+        { property: "og:title", content: AANBOD_PAGE.seo.title },
+        { property: "og:description", content: AANBOD_PAGE.seo.description },
+        { property: "og:image", content: "https://kyanadebosschere.be/foto-2.jpeg" },
+        { property: "og:url", content: "https://kyanadebosschere.be/aanbod" },
+        { tagName: "link", rel: "canonical", href: "https://kyanadebosschere.be/aanbod" },
     ];
 };
 
@@ -69,8 +78,8 @@ export default function Aanbod() {
                                     width: "100%"
                                 }}>
                                     <img
-                                        src={INSTRUCTOR_INFO.image}
-                                        alt={INSTRUCTOR_INFO.name}
+                                        src={INSTRUCTOR_INFO.aanbodImage}
+                                        alt={`${INSTRUCTOR_INFO.name} - Typen met Kyana`}
                                         style={{
                                             width: "100%",
                                             height: "auto",
@@ -143,7 +152,7 @@ export default function Aanbod() {
                             }}>
                                 <img
                                     src="/typ10.png"
-                                    alt="Typ10 logo"
+                                    alt="Typ10 speelse typmethode logo"
                                     style={{
                                         maxWidth: "500px",
                                         width: "100%",
@@ -219,9 +228,7 @@ export default function Aanbod() {
                                     <h3 style={{ color: "var(--text-primary)", fontSize: "1.5rem", fontWeight: "700", marginBottom: "var(--spacing-sm)" }}>
                                         {tier.label}
                                     </h3>
-                                    <p style={{ fontSize: "1rem", color: "var(--text-secondary)", marginBottom: "var(--spacing-md)" }}>
-                                        {tier.description}
-                                    </p>
+                                    <p style={{ fontSize: "1rem", color: "var(--text-secondary)", marginBottom: "var(--spacing-md)" }} dangerouslySetInnerHTML={{ __html: tier.description }} />
 
                                     {tier.features && (
                                         <div style={{ marginBottom: "var(--spacing-lg)", display: "flex", justifyContent: "center" }}>

@@ -41,9 +41,7 @@ export default function Typ10Section() {
                                                 lineHeight: "1.7",
                                                 fontSize: "1.05rem",
                                                 marginBottom: 0
-                                            }}>
-                                                {paragraph}
-                                            </p>
+                                            }} dangerouslySetInnerHTML={{ __html: paragraph }} />
                                         ))}
                                     </div>
                                 ) : (
@@ -52,9 +50,7 @@ export default function Typ10Section() {
                                         lineHeight: "1.7",
                                         fontSize: "1.05rem",
                                         marginBottom: 0
-                                    }}>
-                                        {section.content}
-                                    </p>
+                                    }} dangerouslySetInnerHTML={{ __html: section.content as string }} />
                                 )}
                             </FeatureBox>
                         );

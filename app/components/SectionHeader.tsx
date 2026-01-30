@@ -16,9 +16,8 @@ export default function SectionHeader({ title, subtitle, centered = true }: Sect
                         margin: centered ? "0 auto" : "0",
                         color: "var(--text-secondary)",
                     }}
-                >
-                    {subtitle}
-                </p>
+                    dangerouslySetInnerHTML={{ __html: subtitle }}
+                />
             )}
         </div>
     );

@@ -5,7 +5,7 @@ import InstructorSection from "~/components/sections/InstructorSection";
 import LocationSection from "~/components/sections/LocationSection";
 import Typ10Section from "~/components/sections/Typ10Section";
 import AboutSection from "~/components/sections/AboutSection";
-import { HOMEPAGE_CONTENT } from "~/data/siteData";
+import { HOMEPAGE_CONTENT, INSTRUCTOR_INFO, LOCATION_INFO } from "~/data/siteData";
 import SectionSeparator from "~/components/SectionSeparator";
 
 export const meta: MetaFunction = () => {
@@ -15,12 +15,68 @@ export const meta: MetaFunction = () => {
       name: "description",
       content: HOMEPAGE_CONTENT.seo.description,
     },
+    {
+      name: "keywords",
+      content: HOMEPAGE_CONTENT.seo.keywords,
+    },
+    { property: "og:title", content: HOMEPAGE_CONTENT.seo.title },
+    { property: "og:description", content: HOMEPAGE_CONTENT.seo.description },
+    { property: "og:image", content: "https://kyanadebosschere.be/foto-1.png" },
+    { property: "og:url", content: "https://kyanadebosschere.be/" },
+    { tagName: "link", rel: "canonical", href: "https://kyanadebosschere.be/" },
   ];
 };
 
 export default function Index() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Typen met Kyana",
+    "image": "https://kyanadebosschere.be" + INSTRUCTOR_INFO.image,
+    "description": HOMEPAGE_CONTENT.seo.description,
+    "url": "https://kyanadebosschere.be",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": LOCATION_INFO.inPerson.address.street,
+      "addressLocality": "Ingelmunster",
+      "postalCode": "8770",
+      "addressCountry": "BE"
+    },
+    // Coordinates for Praktijk Boost Ingelmunster
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.898316,
+      "longitude": 3.263629
+    },
+    "areaServed": [
+      "Ingelmunster",
+      "Kuurne",
+      "Harelbeke",
+      "Lendelede",
+      "Izegem",
+      "Meulebeke",
+      "Oostrozebeke",
+      "Ardooie"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": INSTRUCTOR_INFO.name
+    },
+    "offers": {
+      "@type": "Offer",
+      "category": "Typelessen",
+      "price": "275",
+      "priceCurrency": "EUR",
+      "description": "Reeks van 10 lessen Typ10"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Instructor Introduction */}
       <InstructorSection />
 

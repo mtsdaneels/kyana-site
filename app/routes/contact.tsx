@@ -1,7 +1,8 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
-import InfoCard from "~/components/cards/InfoCard";
+
 import SectionHeader from "~/components/SectionHeader";
-import { CONTACT_INFO, LOCATION_INFO, CONTACT_PAGE } from "~/data/siteData";
+import LocationSection from "~/components/sections/LocationSection";
+import { CONTACT_PAGE, CONTACT_INFO } from "~/data/siteData";
 
 export const meta: MetaFunction = () => {
     return [
@@ -10,112 +11,44 @@ export const meta: MetaFunction = () => {
             name: "description",
             content: CONTACT_PAGE.seo.description,
         },
+        {
+            name: "keywords",
+            content: CONTACT_PAGE.seo.keywords,
+        },
+        { property: "og:title", content: CONTACT_PAGE.seo.title },
+        { property: "og:description", content: CONTACT_PAGE.seo.description },
+        { property: "og:image", content: "https://kyanadebosschere.be/foto-1.png" },
+        { property: "og:url", content: "https://kyanadebosschere.be/contact" },
+        { tagName: "link", rel: "canonical", href: "https://kyanadebosschere.be/contact" },
     ];
 };
 
 export default function Contact() {
-    const cardBaseStyle = {
-        height: "100%",
-        display: "flex",
-        flexDirection: "column" as const,
-        border: "none",
-        padding: "var(--spacing-xl)",
-        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    };
 
     return (
         <div style={{ backgroundColor: "#ffffff", minHeight: "100vh" }}>
-            <section className="section">
+            <section className="section" style={{ paddingBottom: "var(--spacing-xl)" }}>
                 <div className="container">
-                    <div className="contact-header-box">
+                    <div className="contact-header-box" style={{ marginBottom: 0 }}>
                         <SectionHeader
                             title={<span style={{ color: "var(--primary-color)" }}>{CONTACT_PAGE.header.title}</span>}
                             subtitle={CONTACT_PAGE.header.subtitle}
                         />
+                        <p style={{
+                            textAlign: "center",
+                            marginTop: "calc(var(--spacing-xl) * -0.5)",
+                            fontSize: "1.2rem",
+                            fontWeight: "500"
+                        }}>
+                            <a href={`mailto:${CONTACT_INFO.email}`} style={{ color: "var(--primary-color)" }}>{CONTACT_INFO.email}</a>
+                        </p>
                     </div>
 
-                    <div className="grid grid-2" style={{
-                        gap: "var(--spacing-xl)",
-                        alignItems: "stretch",
-                    }}>
-                        <div style={{ height: "100%" }}>
-                            <InfoCard
-                                title={<span style={{ color: "var(--primary-color)" }}>{CONTACT_PAGE.contacts.title}</span>}
-                                className="contact-info-card"
-                                style={{
-                                    ...cardBaseStyle,
-                                    background: "var(--bg-accent-light)",
-                                    border: "none",
-                                    padding: undefined, // Let CSS handle it
-                                }}
-                            >
-                                <div>
-                                    <div style={{ marginBottom: "var(--spacing-md)" }}>
-                                        <p style={{ fontWeight: "800", marginBottom: "4px", color: "var(--text-primary)", fontSize: "0.9rem" }}>
-                                            {CONTACT_PAGE.contacts.phoneLabel}
-                                        </p>
-                                        <p style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: 0 }}>{CONTACT_INFO.phone}</p>
-                                    </div>
-                                    <div>
-                                        <p style={{ fontWeight: "800", marginBottom: "4px", color: "var(--text-primary)", fontSize: "0.9rem" }}>
-                                            {CONTACT_PAGE.contacts.emailLabel}
-                                        </p>
-                                        <p style={{ color: "var(--text-primary)", fontSize: "1rem", marginBottom: 0, wordBreak: "break-all" }}>{CONTACT_INFO.email}</p>
-                                    </div>
-                                </div>
-                            </InfoCard>
-                        </div>
 
-                        <div style={{ height: "100%" }}>
-                            <InfoCard
-                                className="contact-info-card"
-                                style={{
-                                    ...cardBaseStyle,
-                                    background: "var(--bg-accent-light)",
-                                    border: "none",
-                                    padding: undefined, // Let CSS handle it
-                                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)"
-                                }}
-                            >
-                                <div style={{ position: "relative", zIndex: 1 }}>
-                                    <p style={{ color: "var(--text-secondary)", marginBottom: "var(--spacing-md)" }}>
-                                        <strong style={{ color: "var(--primary-color)", fontSize: "1.2rem" }}>
-                                            {LOCATION_INFO.inPerson.name}
-                                        </strong>
-                                        <br />
-                                        <span style={{ fontSize: "1rem" }}>{LOCATION_INFO.inPerson.address.street}</span>
-                                        <br />
-                                        <span style={{ fontSize: "1rem" }}>{LOCATION_INFO.inPerson.address.city}</span>
-                                    </p>
-                                    <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "var(--spacing-sm)" }}>
-                                        {LOCATION_INFO.inPerson.details}
-                                    </p>
-                                </div>
-
-                                <div style={{
-                                    width: "100%",
-                                    height: "250px",
-                                    borderRadius: "20px",
-                                    overflow: "hidden",
-                                    marginTop: "auto",
-                                    boxShadow: "0 8px 15px -3px rgba(0, 0, 0, 0.1)"
-                                }}>
-                                    <iframe
-                                        src={LOCATION_INFO.inPerson.googleMapsEmbedUrl}
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        title="Locatie Praktijk Boost"
-                                    ></iframe>
-                                </div>
-                            </InfoCard>
-                        </div>
-                    </div>
                 </div>
             </section>
+
+            <LocationSection />
         </div>
     );
 }

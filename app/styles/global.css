@@ -282,11 +282,12 @@ a:hover {
 
 /* Contact Page Styles */
 .contact-header-box {
-    background-color: var(--bg-accent-light);
+    background: linear-gradient(135deg, var(--bg-accent-light) 0%, #fee8d1 100%);
+    border: 1px solid rgba(255, 131, 85, 0.15);
+    box-shadow: 0 20px 40px -15px rgba(255, 131, 85, 0.1);
     padding: var(--spacing-xl);
-    padding-bottom: var(--spacing-sm);
-    border-radius: 30px;
-    box-shadow: 0 10px 25px -5px rgba(255, 131, 85, 0.1);
+    padding-bottom: var(--spacing-lg);
+    border-radius: 24px;
     margin-bottom: var(--spacing-xl);
 }
 

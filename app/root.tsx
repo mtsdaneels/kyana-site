@@ -5,11 +5,11 @@ import "./styles/global.css";
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="nl">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="data:," />
+        <link rel="icon" href="/simple-logo-cut.png" />
 
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
